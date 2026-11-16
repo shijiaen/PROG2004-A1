@@ -1,0 +1,301 @@
+
+============================================================
+PROG2004 Assessment 1 - Health Service Appointment System
+============================================================
+A scripted demonstration of the object-oriented backbone of a
+health service appointment system. There is no menu or user
+input: main creates the objects and exercises their behaviour.
+
+Parts 1 and 2 are the class design itself: HealthProfessional is
+an abstract class holding the shared data, and the roster contains
+GeneralPractitioner, Specialist, Nurse and Dietitian objects.
+Part 3 exercises that design below.
+
+============================================================
+PART 3 - WORKING WITH HEALTH PROFESSIONAL OBJECTS
+============================================================
+The clinic roster holds 9 professionals in one
+ArrayList<HealthProfessional>. The loop below uses only the common
+supertype, yet each object prints its own type and details.
+
+[1]
+General Practitioner | ID: 1001
+  Name: Dr Alice Nguyen
+  Available days: Monday, Wednesday, Friday
+  Medicare provider number: MED-55821 | Bulk billing: yes
+
+[2]
+General Practitioner | ID: 1002
+  Name: Dr Ben Carter
+  Available days: Tuesday, Thursday
+  Medicare provider number: MED-44108 | Bulk billing: no
+
+[3]
+General Practitioner | ID: 1003
+  Name: Dr Priya Raman
+  Available days: Monday, Tuesday, Wednesday, Thursday, Friday
+  Medicare provider number: MED-77034 | Bulk billing: yes
+
+[4]
+Specialist (Cardiologist) | ID: 2001
+  Name: Dr Sofia Marchetti
+  Available days: Monday, Wednesday
+  Specialty: Cardiologist | Base hospital: St Vincent's Hospital
+
+[5]
+Specialist (Paediatrician) | ID: 2002
+  Name: Dr Daniel Kim
+  Available days: Monday, Tuesday, Wednesday, Thursday, Friday
+  Specialty: Paediatrician | Base hospital: SCU Health Clinic
+
+[6]
+Nurse | ID: 3001
+  Name: Grace Okafor
+  Available days: Monday, Wednesday, Friday
+  Ward: General Ward | Nursing registration: NMW-2210
+
+[7]
+Nurse | ID: 3002
+  Name: Liam Foster
+  Available days: Tuesday, Thursday
+  Ward: Outpatient Clinic | Nursing registration: NMW-3387
+
+[8]
+Dietitian | ID: 4001
+  Name: Hannah Lee
+  Available days: Monday, Wednesday, Friday
+  Dietary specialty: Diabetes nutrition
+
+[9]
+Dietitian | ID: 4002
+  Name: Marco Rossi
+  Available days: Monday, Tuesday, Wednesday, Thursday, Friday
+  Dietary specialty: Sports nutrition
+
+
+------------------------------------------------------------
+Availability stored in the shared HealthProfessional class
+------------------------------------------------------------
+  General Practitioner Dr Alice Nguyen (ID 1001)
+  Available days: Monday, Wednesday, Friday
+  Works on Monday: true
+  Works on Sunday: false
+
+------------------------------------------------------------
+The same objects treated through the Prescriber interface
+------------------------------------------------------------
+  General Practitioner Dr Alice Nguyen (ID 1001) prescribes Amoxicillin 500 mg three times daily for Jane Smith.
+  General Practitioner Dr Ben Carter (ID 1002) prescribes Amoxicillin 500 mg three times daily for Jane Smith.
+  General Practitioner Dr Priya Raman (ID 1003) prescribes Amoxicillin 500 mg three times daily for Jane Smith.
+  Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001) prescribes Amoxicillin 500 mg three times daily for Jane Smith.
+  Specialist (Paediatrician) Dr Daniel Kim (ID 2002) prescribes Amoxicillin 500 mg three times daily for Jane Smith.
+
+------------------------------------------------------------
+Behaviour that only a specific subtype provides
+------------------------------------------------------------
+  Nurse Grace Okafor collected a blood sample from Jane Smith.
+  Nurse Grace Okafor recorded vital signs for Jane Smith: heart rate 72 bpm, temperature 36.8 C.
+  Dietitian Hannah Lee created a meal plan for Jane Smith with the goal: lower cholesterol.
+  BMI for an 82.0 kg, 1.78 m patient: 25.9 (Overweight)
+  Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001) orders echocardiogram for Tom Baker.
+
+============================================================
+PART 4 - MODELLING A SINGLE APPOINTMENT
+============================================================
+Two appointments created for two different health professional types:
+
+Appointment at 09:00
+  Patient            : Jane Smith (mobile 0412 345 678)
+  Health professional: General Practitioner Dr Alice Nguyen (ID 1001)
+                       Medicare provider number: MED-55821 | Bulk billing: yes
+
+Appointment at 08:30
+  Patient            : Tom Baker (mobile 0433 210 987)
+  Health professional: Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+                       Specialty: Cardiologist | Base hospital: St Vincent's Hospital
+
+Comparable check: the 08:30 appointment sorts before the 09:00 appointment: true
+
+An appointment cannot be created without a patient:
+  Blocked: An appointment requires a patient.
+
+============================================================
+PART 5 - MANAGING THE COLLECTION OF APPOINTMENTS
+============================================================
+Clinic schedule: SCU Health Clinic (08:00 to 16:00, 30-minute slots, 16 slots)
+Time slots: [08:00, 08:30, 09:00, 09:30, 10:00, 10:30, 11:00, 11:30, 12:00, 12:30, 13:00, 13:30, 14:00, 14:30, 15:00, 15:30]
+
+------------------------------------------------------------
+Adding appointments (mixed health professional types)
+------------------------------------------------------------
+  SUCCESS: booked Jane Smith with General Practitioner Dr Alice Nguyen (ID 1001) at 09:00.
+  SUCCESS: booked Tom Baker with Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001) at 13:00.
+  SUCCESS: booked Tom Baker with Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001) at 08:30.
+  SUCCESS: booked Aisha Khan with Nurse Grace Okafor (ID 3001) at 10:00.
+  SUCCESS: booked Aisha Khan with Dietitian Hannah Lee (ID 4001) at 11:00.
+  SUCCESS: booked Liam Chen with Nurse Liam Foster (ID 3002) at 09:00.
+  SUCCESS: booked Liam Chen with Specialist (Paediatrician) Dr Daniel Kim (ID 2002) at 10:00.
+  SUCCESS: booked Jane Smith with General Practitioner Dr Ben Carter (ID 1002) at 14:00.
+
+------------------------------------------------------------
+All appointments in insertion order
+------------------------------------------------------------
+All appointments as booked (8)
+  1. 09:00 | Jane Smith (0412 345 678) | General Practitioner Dr Alice Nguyen (ID 1001)
+  2. 13:00 | Tom Baker (0433 210 987) | Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+  3. 08:30 | Tom Baker (0433 210 987) | Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+  4. 10:00 | Aisha Khan (0455 908 112) | Nurse Grace Okafor (ID 3001)
+  5. 11:00 | Aisha Khan (0455 908 112) | Dietitian Hannah Lee (ID 4001)
+  6. 09:00 | Liam Chen (0488 771 305) | Nurse Liam Foster (ID 3002)
+  7. 10:00 | Liam Chen (0488 771 305) | Specialist (Paediatrician) Dr Daniel Kim (ID 2002)
+  8. 14:00 | Jane Smith (0412 345 678) | General Practitioner Dr Ben Carter (ID 1002)
+
+------------------------------------------------------------
+All appointments sorted by time
+------------------------------------------------------------
+All appointments sorted by time (8)
+  1. 08:30 | Tom Baker (0433 210 987) | Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+  2. 09:00 | Jane Smith (0412 345 678) | General Practitioner Dr Alice Nguyen (ID 1001)
+  3. 09:00 | Liam Chen (0488 771 305) | Nurse Liam Foster (ID 3002)
+  4. 10:00 | Aisha Khan (0455 908 112) | Nurse Grace Okafor (ID 3001)
+  5. 10:00 | Liam Chen (0488 771 305) | Specialist (Paediatrician) Dr Daniel Kim (ID 2002)
+  6. 11:00 | Aisha Khan (0455 908 112) | Dietitian Hannah Lee (ID 4001)
+  7. 13:00 | Tom Baker (0433 210 987) | Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+  8. 14:00 | Jane Smith (0412 345 678) | General Practitioner Dr Ben Carter (ID 1002)
+
+------------------------------------------------------------
+Filtering by health professional ID (2001)
+------------------------------------------------------------
+Appointments for health professional 2001 (2)
+  1. 13:00 | Tom Baker (0433 210 987) | Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+  2. 08:30 | Tom Baker (0433 210 987) | Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+
+------------------------------------------------------------
+Sorting the filtered subset by time
+------------------------------------------------------------
+Health professional 2001, sorted by time (2)
+  1. 08:30 | Tom Baker (0433 210 987) | Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+  2. 13:00 | Tom Baker (0433 210 987) | Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+
+------------------------------------------------------------
+Filtering by patient mobile number (0412 345 678)
+------------------------------------------------------------
+Appointments for mobile number 0412 345 678 (2)
+  1. 09:00 | Jane Smith (0412 345 678) | General Practitioner Dr Alice Nguyen (ID 1001)
+  2. 14:00 | Jane Smith (0412 345 678) | General Practitioner Dr Ben Carter (ID 1002)
+
+------------------------------------------------------------
+Cancelling by health professional ID and time
+------------------------------------------------------------
+  SUCCESS: cancelled the 09:00 appointment for Jane Smith with General Practitioner Dr Alice Nguyen (ID 1001).
+
+------------------------------------------------------------
+Cancelling by patient mobile number
+------------------------------------------------------------
+  SUCCESS: cancelled 2 appointments for mobile number 0455 908 112.
+
+------------------------------------------------------------
+Appointments after the cancellations
+------------------------------------------------------------
+Remaining appointments, sorted by time (5)
+  1. 08:30 | Tom Baker (0433 210 987) | Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+  2. 09:00 | Liam Chen (0488 771 305) | Nurse Liam Foster (ID 3002)
+  3. 10:00 | Liam Chen (0488 771 305) | Specialist (Paediatrician) Dr Daniel Kim (ID 2002)
+  4. 13:00 | Tom Baker (0433 210 987) | Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+  5. 14:00 | Jane Smith (0412 345 678) | General Practitioner Dr Ben Carter (ID 1002)
+
+------------------------------------------------------------
+Schedule flexibility: a different day, no code changes
+------------------------------------------------------------
+  New schedule: Saturday Clinic (09:00 to 12:00, 45-minute slots, 4 slots)
+  New slots: [09:00, 09:45, 10:30, 11:15]
+  SUCCESS: booked Jane Smith with General Practitioner Dr Alice Nguyen (ID 1001) at 09:00.
+  SUCCESS: booked Tom Baker with General Practitioner Dr Ben Carter (ID 1002) at 09:45.
+  WARNING: 09:30 is not a clinic time slot. The clinic runs 09:00 to 12:00, 45-minute slots.
+
+------------------------------------------------------------
+Error cases
+------------------------------------------------------------
+  Attempt to double-book a professional:
+  WARNING: General Practitioner Dr Ben Carter (ID 1002) is already booked at 14:00.
+  Attempt to book outside the clinic schedule:
+  WARNING: 17:00 is not a clinic time slot. The clinic runs 08:00 to 16:00, 30-minute slots.
+  Attempt to book without patient details:
+  WARNING: an appointment requires a patient.
+  Attempt to cancel an appointment that does not exist:
+  WARNING: no appointment found for health professional ID 9999 at 09:00.
+  Attempt to cancel with an unknown phone number:
+  WARNING: no appointments found for mobile number 0400 000 000.
+  Attempt to cancel with invalid time text:
+  WARNING: cannot cancel the appointment: Time must be written as HH:mm, for example 09:30.
+
+============================================================
+PART 6 - END-TO-END DEMONSTRATION
+============================================================
+A fresh clinic day is used so that the whole booking lifecycle is
+shown from start to finish.
+
+------------------------------------------------------------
+1. Booking the day
+------------------------------------------------------------
+  SUCCESS: booked Emma Wilson with Dietitian Hannah Lee (ID 4001) at 10:30.
+  SUCCESS: booked Olivia Martin with General Practitioner Dr Priya Raman (ID 1003) at 09:00.
+  SUCCESS: booked Noah Brown with Nurse Grace Okafor (ID 3001) at 09:00.
+  SUCCESS: booked Emma Wilson with General Practitioner Dr Priya Raman (ID 1003) at 08:30.
+  SUCCESS: booked Noah Brown with Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001) at 11:30.
+
+------------------------------------------------------------
+2. The whole day, sorted by time
+------------------------------------------------------------
+All appointments (5)
+  1. 08:30 | Emma Wilson (0466 555 444) | General Practitioner Dr Priya Raman (ID 1003)
+  2. 09:00 | Olivia Martin (0477 123 900) | General Practitioner Dr Priya Raman (ID 1003)
+  3. 09:00 | Noah Brown (0421 998 776) | Nurse Grace Okafor (ID 3001)
+  4. 10:30 | Emma Wilson (0466 555 444) | Dietitian Hannah Lee (ID 4001)
+  5. 11:30 | Noah Brown (0421 998 776) | Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+
+------------------------------------------------------------
+3. Filter by health professional ID (3001)
+------------------------------------------------------------
+Appointments for health professional 3001 (1)
+  1. 09:00 | Noah Brown (0421 998 776) | Nurse Grace Okafor (ID 3001)
+
+------------------------------------------------------------
+4. Filter by patient mobile number (0466 555 444)
+------------------------------------------------------------
+Appointments for mobile number 0466 555 444 (2)
+  1. 10:30 | Emma Wilson (0466 555 444) | Dietitian Hannah Lee (ID 4001)
+  2. 08:30 | Emma Wilson (0466 555 444) | General Practitioner Dr Priya Raman (ID 1003)
+
+------------------------------------------------------------
+5. Sort the filtered subset by time
+------------------------------------------------------------
+Emma Wilson's appointments, sorted by time (2)
+  1. 08:30 | Emma Wilson (0466 555 444) | General Practitioner Dr Priya Raman (ID 1003)
+  2. 10:30 | Emma Wilson (0466 555 444) | Dietitian Hannah Lee (ID 4001)
+
+------------------------------------------------------------
+6. Cancel one appointment by professional ID and time
+------------------------------------------------------------
+  SUCCESS: cancelled the 08:30 appointment for Emma Wilson with General Practitioner Dr Priya Raman (ID 1003).
+
+------------------------------------------------------------
+7. The day after the cancellation
+------------------------------------------------------------
+Remaining appointments, sorted by time (4)
+  1. 09:00 | Olivia Martin (0477 123 900) | General Practitioner Dr Priya Raman (ID 1003)
+  2. 09:00 | Noah Brown (0421 998 776) | Nurse Grace Okafor (ID 3001)
+  3. 10:30 | Emma Wilson (0466 555 444) | Dietitian Hannah Lee (ID 4001)
+  4. 11:30 | Noah Brown (0421 998 776) | Specialist (Cardiologist) Dr Sofia Marchetti (ID 2001)
+
+------------------------------------------------------------
+8. Error cases
+------------------------------------------------------------
+  The same professional cannot be booked twice at 09:00:
+  WARNING: Nurse Grace Okafor (ID 3001) is already booked at 09:00.
+  An appointment that does not exist cannot be cancelled:
+  WARNING: no appointment found for health professional ID 1003 at 15:00.
+
+============================================================
+END OF DEMONSTRATION
+============================================================
