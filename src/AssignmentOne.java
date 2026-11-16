@@ -17,7 +17,7 @@ import java.util.List;
  *   <li>Part 6: an end-to-end booking day, including error cases.</li>
  * </ol>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public class AssignmentOne {

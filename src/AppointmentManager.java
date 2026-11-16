@@ -16,7 +16,7 @@ import java.util.List;
  * "SUCCESS: " and a failed action starts with "WARNING: ", so the caller can
  * show the result to the user without the manager printing anything itself.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public class AppointmentManager {

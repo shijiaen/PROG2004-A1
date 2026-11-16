@@ -7,7 +7,7 @@
  * simpler and stops the same pair of values from being passed around
  * separately.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public class Patient {

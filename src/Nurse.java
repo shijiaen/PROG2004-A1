@@ -8,7 +8,7 @@ import java.util.List;
  * so this class deliberately does not implement the Prescriber interface; it
  * provides nursing-specific behaviour instead.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public class Nurse extends HealthProfessional {

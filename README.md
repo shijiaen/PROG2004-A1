@@ -2,8 +2,8 @@
 
 **Unit:** PROG2004 Object Oriented Programming
 **Assessment:** Assessment 1 - Portfolio/programming (40%)
-**Student:** `<Your Name>` (`<MySCU username>`)
-**Project:** `A1-username`
+**Student:** Shi Jiaen (25259230)
+**Project:** `A1-25259230`
 
 A Java implementation of the object-oriented backbone of a health service
 appointment system. The program has no menu, login, database or user
@@ -16,14 +16,14 @@ exercises their behaviour and prints a scripted simulation to the console.
 
 ### IntelliJ IDEA
 
-1. Open the `A1-username` folder as a project.
+1. Open the `A1-25259230` folder as a project.
 2. Mark `src` as the source root (right-click `src` > Mark Directory as >
    Sources Root).
 3. Open `src/AssignmentOne.java` and run `main`.
 
 ### Command line (JDK 11 or later)
 
-From the `A1-username` folder:
+From the `A1-25259230` folder:
 
 ```bash
 javac -d out src/*.java
@@ -40,7 +40,7 @@ classes, interfaces, polymorphism, enums, `ArrayList`, `Comparable` /
 ## 2. Project structure
 
 ```
-A1-username/
+A1-25259230/
 ├── src/
 │   ├── AssignmentOne.java          # main method and scripted demonstration
 │   ├── HealthProfessional.java     # abstract base class (Part 1)
@@ -392,11 +392,12 @@ All appointments sorted by time (8)
 
 ## 8. Submission notes
 
-- Rename the project folder and the zip to `A1-<MySCU username>` before
-  submitting. Replace `<Your Name>` in the Javadoc `@author` tags.
+- The project folder is already named `A1-25259230` and the Javadoc
+  `@author` tags are filled in. If your MySCU username is not the student
+  number, rename the folder and the zip to `A1-<MySCU username>`.
 - The GitHub repository should contain this project and a history of
   meaningful commits made while the work was developed.
-- Add the WakaTime report as `A1-username-WakaTime.png` (or `.jpg` / `.pdf`).
+- Add the WakaTime report as `A1-25259230-WakaTime.png` (or `.jpg` / `.pdf`).
 - Record the five-minute video using `docs/video-plan.md` as a guide, upload it
   to SCU OneDrive and put the shareable link in the submission comments.
 - Complete the GenAI declaration honestly in the submission comments and make

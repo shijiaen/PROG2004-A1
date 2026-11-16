@@ -8,7 +8,7 @@ import java.util.List;
  * real days. This makes invalid values impossible, gives type safety when the
  * days are compared, and allows the display name to live in one place.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public enum Day {

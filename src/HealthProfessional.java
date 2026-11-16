@@ -10,7 +10,7 @@ import java.util.List;
  * class from being instantiated directly and forces every subclass to
  * provide its professional type and its role-specific details.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public abstract class HealthProfessional {

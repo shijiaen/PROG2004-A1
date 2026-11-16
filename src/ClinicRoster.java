@@ -9,7 +9,7 @@ import java.util.List;
  * with the whole team through the common supertype, while specific behaviour
  * is still available by looking up and checking a particular object.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public class ClinicRoster {

@@ -7,7 +7,7 @@
  * practitioner and the specialist share this capability without forcing
  * nurses or dietitians to inherit behaviour they do not have.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public interface Prescriber {

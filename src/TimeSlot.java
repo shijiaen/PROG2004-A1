@@ -7,7 +7,7 @@
  * comparison, while the hour and minute fields keep the object easy to read
  * and validate.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public class TimeSlot implements Comparable<TimeSlot> {

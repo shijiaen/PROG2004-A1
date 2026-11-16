@@ -7,7 +7,7 @@
  * HealthProfessional, one appointment class can link a patient to any of the
  * GP, specialist, nurse or dietitian objects.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public class Appointment implements Comparable<Appointment> {

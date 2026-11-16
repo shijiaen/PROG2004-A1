@@ -7,7 +7,7 @@ import java.util.List;
  * HealthProfessional, adds a specialty and a base hospital, and can prescribe
  * medication as well as order diagnostic tests.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public class Specialist extends HealthProfessional implements Prescriber {

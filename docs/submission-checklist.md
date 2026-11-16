@@ -9,10 +9,9 @@ allowed before the deadline.
 
 ## 1. Personalise the project
 
-- [ ] Rename the folder `A1-username` to `A1-<your MySCU username>`
-      (for example `A1-lfolkman`).
-- [ ] Replace every `<Your Name>` in the Javadoc `@author` tags with your name.
-- [ ] Confirm the main class is called `AssignmentOne` and is in `src`.
+- [x] Project folder named `A1-25259230`.
+- [x] Javadoc `@author` tags filled in as Shi Jiaen (25259230).
+- [x] Main class is `AssignmentOne` in `src`.
 - [ ] Read every file and make sure you understand and agree with each design
       decision. You may be interviewed about the code.
 
@@ -39,13 +38,10 @@ allowed before the deadline.
 
 ## 3. GitHub
 
-- [ ] Create a repository named `A1-<username>` (private is recommended).
-- [ ] Commit the project with meaningful commit messages. Do not upload one
-      single dump at the end: commit the work in logical stages with clear
-      messages (for example "Add HealthProfessional base class", "Add
-      appointment manager", "Add main demonstration").
-- [ ] Push the repository.
-- [ ] Invite your tutor and the unit assessor as collaborators if it is private.
+- [x] Repository created: https://github.com/shijiaen/PROG2004-A1 (public).
+- [x] Logical commits created with descriptive messages.
+- [x] Repository pushed to `main`.
+- [x] Repository is public, so the tutor and assessor can view it without an invite.
 - [ ] Copy the repository link into the MySCU submission comments.
 
 **Important:** the history must honestly reflect your own work. Do not
@@ -56,7 +52,7 @@ backdate commits or fabricate activity.
 - [ ] Install the WakaTime plugin for your IDE (or the WakaTime CLI).
 - [ ] Track the time you spend on this Java project.
 - [ ] Export or screenshot the report.
-- [ ] Name the file `A1-<username>-WakaTime.png` (or `.jpg` / `.pdf`).
+- [ ] Name the file `A1-25259230-WakaTime.png` (or `.jpg` / `.pdf`).
 - [ ] Check that the report is readable and covers the assessment period.
 
 ## 5. Video
@@ -71,7 +67,7 @@ backdate commits or fabricate activity.
 
 ## 6. Package the zip
 
-- [ ] The zip is called `A1-<username>.zip`.
+- [ ] The zip is called `A1-25259230.zip`.
 - [ ] It contains the project folder with `src/`, `README.md` and `docs/`.
 - [ ] It does **not** contain `out/`, `.idea/`, `.class` files or local
       screenshots that are not part of the submission.

@@ -7,7 +7,7 @@ import java.util.List;
  * HealthProfessional and adds nutrition-specific data and behaviour, such as
  * creating a meal plan and calculating a body mass index (BMI).</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public class Dietitian extends HealthProfessional {

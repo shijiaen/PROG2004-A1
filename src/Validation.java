@@ -5,7 +5,7 @@
  * in this class so that every object is protected by the same checks. All
  * methods are static because a Validation object never needs to exist.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public final class Validation {

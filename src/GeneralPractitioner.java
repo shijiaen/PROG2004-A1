@@ -7,7 +7,7 @@ import java.util.List;
  * adds the Medicare details that are relevant to general practice, and
  * implements the Prescriber interface because GPs can prescribe medication.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public class GeneralPractitioner extends HealthProfessional implements Prescriber {

@@ -10,7 +10,7 @@ import java.util.List;
  * arguments change and the rest of the system keeps working because it asks
  * this object whether a slot is valid.</p>
  *
- * @author &lt;Your Name&gt;
+ * @author Shi Jiaen (25259230)
  * @version 1.0
  */
 public class ClinicSchedule {
