@@ -1,0 +1,21 @@
+# Compiled output
+out/
+build/
+*.class
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Eclipse / VS Code
+.settings/
+.classpath
+.project
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# WakaTime local data (the report is submitted separately)
+.wakatime/
