@@ -7,6 +7,12 @@ place in your code where it is used, and justifies why you used it there.
 This plan is a guide, not a script to read. Rehearse it in your own words and
 make sure every claim matches the code you actually submit.
 
+> **Recording aid:** a silent 4:40 demo video,
+> `A1-25259230-demo-silent.mp4`, has been generated to sit behind this
+> explanation. The exact chapter timestamps are in
+> `docs/video-narration-cues.md`. Record your own voice over the video and
+> keep the final cut under 5:00.
+
 ---
 
 ## Before recording
